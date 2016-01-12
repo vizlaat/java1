@@ -1,4 +1,5 @@
 package arrayToString;
+//This program conerts an array into a string in a spiral order. 
 // Az alábbi program az input téglalap alakú tömb
 // elemeit csigavonalban sorbarendezve egy String-be (eredmény) írja át.
 public class arrayToString {
