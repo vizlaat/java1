@@ -1,4 +1,5 @@
 package palindromString;
+//This program find all the palindrom sections in a given string.
 //Az alábbi program a betuk String-ből
 // kiírja a palindrom részleteket.
 
