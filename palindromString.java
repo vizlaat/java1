@@ -6,23 +6,23 @@ package palindromString;
 public class palindromString {
 
 	public static void main(String[] args) {
-		String betuk = "aladar";
-		int length = (int) (betuk.length());
+		String letters = "aladar";
+		int length = (int) (letters.length());
 		
 		for (int i=0; i<length; i++){
 			for (int j= i+1; j<=length; j++){
-				String test = betuk.substring(i, j);
+				String test = letters.substring(i, j);
 				if(isPalindrom(test)) System.out.print(test+" ");
 			}
 		}
 
 	}
 	
-	public static boolean isPalindrom(String betuk){
-		int length = betuk.length();
-		char[] jegyek = betuk.toCharArray();
+	public static boolean isPalindrom(String letters){
+		int length = letters.length();
+		char[] characters = letters.toCharArray();
 		for (int i=0; i<length/2;i++){
-			if(!(jegyek[i]==jegyek[length-1-i])) return false;				
+			if(!(characters[i]==characters[length-1-i])) return false;				
 		}			
 		return true;
 		
