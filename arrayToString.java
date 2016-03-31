@@ -12,55 +12,55 @@ public class arrayToString {
 			{12,13,14},
 		};
 		
-		String eredmeny = "";
-		String szakasz;
-		int[][] munka = input;
-		while(munka.length>0){
-			szakasz = kimasolas(munka);
-			eredmeny = eredmeny + szakasz;
-			if(munka.length>1 && munka[0].length>1){
-				munka = torles(munka);
+		String result = "";
+		String section = ""; 
+		int[][] work = input;
+		while(work.length>0){
+			section = copy(work);
+			result = result + section;
+			if(work.length>1 && work[0].length>1){
+				work = deleting(work);
 			}else {
 				break;
 				}
 		}
-		System.out.println(eredmeny);
+		System.out.println(result);
 		
 
 	}
-	public static int[][] torles(int[][] tabla){
-		int magassag = tabla.length;
-		int hossz = tabla[0].length;
-		int[][] valasz = new int[magassag-2][hossz-2];
-		for(int i=0; i<magassag-2; i++){
-			for(int j=0; j<hossz-2;j++){
-				valasz[i][j] = tabla[i+1][j+1];
+	public static int[][] deleting(int[][] table){
+		int height = tabla.length;
+		int length = tabla[0].length;
+		int[][] answer = new int[height-2][length-2];
+		for(int i=0; i<heihjt-2; i++){
+			for(int j=0; j<length-2;j++){
+				answer[i][j] = table[i+1][j+1];
 			}
 		}
 		
-		return valasz;
+		return answer;
 	}
-	public static String kimasolas(int[][] tabla){
-		int magassag = tabla.length;
-		int hossz = tabla[0].length;
-		String valasz= "";
-		//elso sor
-		for(int i =0; i<hossz;i++){
-			valasz = valasz + " " + tabla[0][i];
+	public static String copy(int[][] table){
+		int height = tabla.length;
+		int length = tabla[0].length;
+		String answer= "";
+		//first row
+		for(int i =0; i<length;i++){
+			answer = answer + " " + table[0][i];
 		}
-		//utolso oszlop
-		for(int i = 1; i<magassag; i++){
-			valasz = valasz + " " + tabla[i][hossz-1];
+		//last column
+		for(int i = 1; i<height; i++){
+			answer = answer + " " + table[i][length-1];
 		}
-		//also sor
-		for(int i=1; i<hossz;i++){
-			valasz = valasz + " " + tabla[magassag-1][hossz-1-i];
+		//last row
+		for(int i=1; i<length;i++){
+			answer = answer + " " + table[height-1][length-1-i];
 		}
-		//elso oszlop
-		for(int i= 1; i<magassag-1;i++){
-			valasz = valasz + " " + tabla[magassag-1-i][0];
+		//first column
+		for(int i= 1; i<height-1;i++){
+			answer = answer + " " + table[height-1-i][0];
 		}
-		return valasz;
+		return answer;
 		
 	}
 
